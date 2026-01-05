@@ -1,0 +1,13 @@
+{
+  "name": "Jahir Miru",
+  "customId": "",
+  "email": "blee100001@gmail.com",
+  "phone": "01919404195",
+  "dob": "1111-11-11",
+  "gender": "Male",
+  "role": "a",
+  "department": "a",
+  "type": "fixed",
+  "salary": 15000,
+  "status": "active"
+}

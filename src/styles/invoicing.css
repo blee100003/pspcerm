@@ -1,0 +1,128 @@
+.invoice-builder {
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--border-color);
+}
+
+.invoice-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-lg);
+}
+
+.invoice-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-lg) 0;
+}
+
+.invoice-items-table th {
+    text-align: left;
+    border-bottom: 2px solid var(--border-color);
+    padding: var(--spacing-md);
+    color: var(--color-text-secondary);
+}
+
+.invoice-items-table td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+}
+
+.invoice-items-table input {
+    width: 100%;
+    padding: var(--spacing-sm);
+    background: var(--color-bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--color-text-primary);
+    border-radius: var(--radius-sm);
+}
+
+.invoice-summary {
+    align-self: flex-end;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+}
+
+.summary-row.total {
+    border-top: 1px solid var(--border-color);
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-md);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-text-primary);
+}
+
+/* Print Styles */
+@media print {
+
+    .sidebar,
+    .top-header,
+    .page-header-actions,
+    .form-actions.no-print,
+    .no-print {
+        display: none !important;
+    }
+
+    .app-layout,
+    .main-content,
+    .content-area {
+        padding: 0;
+        margin: 0;
+        height: auto;
+        overflow: visible;
+        width: 100%;
+        display: block;
+    }
+
+    .invoice-builder {
+        border: none;
+        background: white;
+        color: black;
+        padding: 0;
+    }
+
+    .invoice-print-header {
+        display: block !important;
+    }
+
+    .invoice-items-table input {
+        border: none;
+        background: transparent;
+        color: black;
+        padding: 0;
+    }
+
+    .form-group label {
+        display: none;
+        /* Hide labels in print if desired, usually looks cleaner */
+    }
+
+    /* Except for specific labels if needed, but generally invoices just show values */
+    .invoice-header-row .form-group input {
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    td input {
+        text-align: inherit;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}
