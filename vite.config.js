@@ -11,6 +11,8 @@ export default defineConfig({
         target: 'http://localhost:8000',
         changeOrigin: true,
         secure: false,
+        // This fixes the "Blocked request" error
+        allowedHosts: ['pspcerm.onrender.com'],
       }
     }
   }
